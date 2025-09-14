@@ -1,5 +1,6 @@
 ﻿CREATE TABLE [dbo].[Employees]
 (
 	[EmployeeId] INT NOT NULL IDENTITY PRIMARY KEY,
-	[LastNameAndInitials] NVARCHAR(60) NOT NULL		-- фамилия и инициалы сотрудника
+	[LastName] NVARCHAR(60) NOT NULL,
+	[Initials] NVARCHAR(10) NOT NULL,
 );
