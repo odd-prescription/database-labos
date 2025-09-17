@@ -1,4 +1,7 @@
-﻿-- Выписанное лечение
+﻿/*  Выписанное лечение
+	Описание: 
+
+*/
 
 CREATE TABLE [dbo].[PrescribedTreatments]
 (
