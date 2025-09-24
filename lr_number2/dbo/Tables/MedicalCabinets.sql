@@ -15,5 +15,5 @@ CREATE TABLE [dbo].[MedicalCabinets]
 	[Doctor] INT NOT NULL,
 	FOREIGN KEY (Doctor) REFERENCES Personnel(DoctorId)
 		ON DELETE NO ACTION
-		ON UPDATE CASCADE
+		ON UPDATE NO ACTION
 )
