@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[UserAddresses]
+(
+	[Id] INT NOT NULL PRIMARY KEY,
+	[Address] NVARCHAR(50) NOT NULL,
+	[UserId] INT NOT NULL,
+	FOREIGN KEY (UserId) REFERENCES Users(Id)
+)

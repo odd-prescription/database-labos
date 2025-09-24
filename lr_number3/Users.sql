@@ -6,5 +6,4 @@
 	[Password] NVARCHAR(32) NOT NULL CHECK (Password > 8),
 	[Email] NVARCHAR(30) NOT NULL UNIQUE,
 	[PhoneNumber] NVARCHAR(20),
-	[Address] NVARCHAR(50) NOT NULL
 )

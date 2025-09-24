@@ -64,5 +64,6 @@
     <Build Include="OrderStatuses.sql" />
     <Build Include="GoodsCategories.sql" />
     <Build Include="OrderGoods.sql" />
+    <Build Include="UserAddresses.sql" />
   </ItemGroup>
 </Project>
