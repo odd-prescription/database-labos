@@ -9,6 +9,4 @@ CREATE TABLE [dbo].[Personnel]
 	[Specialization] NVARCHAR(20) NOT NULL,
 	[LastName] NVARCHAR(60) NOT NULL,
 	[FirstName] NVARCHAR(60) NOT NULL,
-	-- Тут д.б участок, который обслуживает доктор
-	
 )

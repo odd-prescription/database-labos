@@ -64,7 +64,6 @@
     <Build Include="dbo\Tables\Patients.sql" />
     <Build Include="dbo\Tables\PatientDiagnoses.sql" />
     <Build Include="dbo\Tables\MedicalCabinets.sql" />
-    <Build Include="dbo\Tables\MedicalSchedule.sql" />
     <Build Include="dbo\Tables\AppointmentDates.sql" />
     <Build Include="dbo\Tables\PrescribedTreatments.sql" />
   </ItemGroup>
