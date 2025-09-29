@@ -7,5 +7,5 @@ CREATE TABLE [dbo].[Menus]
 	[Description] NVARCHAR(200),
 	[Price] MONEY NOT NULL CHECK ([Price] > 0),
 	[Category] NVARCHAR(20) NOT NULL DEFAULT 'Прочее',
-	FOREIGN KEY ([Restaurant]) REFERENCES [Restaurants](RestaurantId)
+	FOREIGN KEY ([Restaurant]) REFERENCES [Restaurants]([RestaurantId])
 )
