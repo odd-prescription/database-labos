@@ -1,4 +1,9 @@
-﻿CREATE TABLE [dbo].[Restaurants]
+﻿-- ID, название, адрес, рейтинг, количество столиков, меню
+CREATE TABLE [dbo].[Restaurants]
 (
-	[Id] INT NOT NULL PRIMARY KEY
+	[RestaurantId] INT NOT NULL PRIMARY KEY,
+	[Name] NVARCHAR(40) NOT NULL,
+	[Address] NVARCHAR(50),
+	[PhoneNumber] NVARCHAR(10) NOT NULL,
+	[Capacity] INT,
 )
