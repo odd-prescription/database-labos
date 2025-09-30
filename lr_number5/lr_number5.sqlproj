@@ -66,6 +66,6 @@
     <Build Include="Waiters.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="InsertingScript.sql" />
+    <PostDeploy Include="InsertingScript.sql" />
   </ItemGroup>
 </Project>
