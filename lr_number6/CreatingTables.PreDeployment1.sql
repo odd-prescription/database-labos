@@ -4,46 +4,48 @@
 
 -- Таблица факультетов
 CREATE TABLE [Faculties] (
-    [Id] VARCHAR(100) PRIMARY KEY,
-    [Name] VARCHAR(100)
+    [Id] NVARCHAR(5) PRIMARY KEY,
+    [Name] NVARCHAR(100)
 );
 
 -- Таблица студентов
 CREATE TABLE [Students] (
     [Id] INT IDENTITY PRIMARY KEY,
-    [Name] VARCHAR(100) NOT NULL,
+    [Name] NVARCHAR(100) NOT NULL,
     [Age] INT,
-    [Grade] INT,
-    [FacultyId] INT,
+    [FacultyId] NVARCHAR(5) NOT NULL,
     FOREIGN KEY ([FacultyId]) REFERENCES [Faculties]([Id])
 );
 
 -- Таблица курсов
 CREATE TABLE [Courses] (
     [Id] INT IDENTITY PRIMARY KEY,
-    [Name] VARCHAR(100) NOT NULL,
-    [FacultyId] INT,
-    FOREIGN KEY ([FacultyId]) REFERENCES [Faculties]([Id]),
-    FOREIGN KEY ([FacultyId]) REFERENCES [School]([Id])
+    [Name] NVARCHAR(100) NOT NULL,
+    [FacultyId] NVARCHAR(5) NOT NULL,
+    FOREIGN KEY ([FacultyId]) REFERENCES [Faculties]([Id])
 );
 
 -- Таблица преподавателей
 CREATE TABLE [Teachers] (
     [Id] INT IDENTITY PRIMARY KEY,
-    [Name] INT
+    [Name] NVARCHAR(100)
 );
 
 -- Таблица групп
 CREATE TABLE [Groups] (
     [Id] INT IDENTITY PRIMARY KEY,
-    [Name] VARCHAR(100) NOT NULL,
-    [FacultyId] INT
+    [Name] NVARCHAR(100) NOT NULL,
+    [FacultyId] NVARCHAR(5) NOT NULL,
+    FOREIGN KEY ([FacultyId]) REFERENCES [Faculties]([Id])
 );
 
 -- Таблица оценок
 CREATE TABLE [Grades] (
     [Id] INT IDENTITY PRIMARY KEY,
-    [StudentId] INT,
-    [CourseId] INT,
-    [Grade] INT
+    [StudentId] INT NOT NULL,
+    [CourseId] INT NOT NULL,
+    [Grade] INT,
+    FOREIGN KEY ([StudentId]) REFERENCES [Students]([Id]),
+    FOREIGN KEY ([CourseId]) REFERENCES [Courses]([Id]),
 );
+
