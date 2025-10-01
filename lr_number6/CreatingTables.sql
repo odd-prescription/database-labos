@@ -3,7 +3,7 @@
 */
 
 -- Таблица факультетов
-CREATE TABLE [Facuties] (
+CREATE TABLE [Faculties] (
     [Id] VARCHAR(100) PRIMARY KEY,
     [Name] VARCHAR(100)
 );

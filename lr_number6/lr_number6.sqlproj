@@ -58,6 +58,9 @@
     <Folder Include="Properties" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="CreatingTables.sql" />
+    <None Include="CreatingTables.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="InsertingData.sql" />
   </ItemGroup>
 </Project>
