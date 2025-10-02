@@ -62,5 +62,7 @@
     <Build Include="Weapons.sql" />
     <Build Include="Armors.sql" />
     <Build Include="Inventory.sql" />
+    <Build Include="Clothes.sql" />
+    <Build Include="Accessories.sql" />
   </ItemGroup>
 </Project>
