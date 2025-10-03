@@ -1,0 +1,1 @@
+﻿-- SUM, AVG, COUNT, MAX, MIN
