@@ -64,5 +64,12 @@
     <Build Include="Inventory.sql" />
     <Build Include="Clothes.sql" />
     <Build Include="Accessories.sql" />
+    <Build Include="Players.sql" />
+    <Build Include="ItemMaterials.sql" />
+    <Build Include="ItemSpells.sql" />
+    <Build Include="ItemTypes.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="InsertingScript1.sql" />
   </ItemGroup>
 </Project>

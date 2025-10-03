@@ -2,9 +2,12 @@
 (
 	[WeaponId] NVARCHAR(6) NOT NULL PRIMARY KEY,
 	[ItemId] NVARCHAR(6) NOT NULL,
-	[Type] NVARCHAR(10) NOT NULL, -- Меч, лук, секира, топор...
+	[Type] INT NOT NULL, -- Меч, лук, секира, топор...
 	[Damage] INT NOT NULL CHECK([Damage] >= 0),
-	[Material] NVARCHAR(20) NOT NULL, -- Железное, древних нордов, стальное...
-	[Spell] NVARCHAR(50), -- Поглощения душ, поджога, обморожения...
-	FOREIGN KEY ([ItemId]) REFERENCES [Items]([ItemId])
+	[Material] INT NOT NULL,
+	[Spell] INT,
+	FOREIGN KEY ([ItemId]) REFERENCES [Items]([ItemId]),
+	FOREIGN KEY ([Spell]) REFERENCES [ItemSpells]([SpellId]),
+	FOREIGN KEY ([Material]) REFERENCES [ItemMaterials]([MaterialId]),
+	FOREIGN KEY ([Type]) REFERENCES [ItemTypes]([TypeId])
 )

@@ -4,5 +4,5 @@
 	[Name] NVARCHAR(100) NOT NULL DEFAULT 'ITEM_DEFAULT',
 	[Description] NVARCHAR(200),
 	[Price] INT NOT NULL CHECK([Price] >= 0),
-	[Weight] DECIMAL(2, 2) NOT NULL CHECK([Weight] >= 0)
+	[Weight] DECIMAL(5, 2) NOT NULL CHECK([Weight] >= 0)
 )

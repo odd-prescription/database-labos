@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[ItemTypes]
+(
+	[TypeId] INT NOT NULL PRIMARY KEY,
+	[Type] NVARCHAR(20) NOT NULL UNIQUE
+)
