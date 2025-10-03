@@ -56,20 +56,15 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="Tables" />
     <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Tables\Accessories.sql" />
-    <Build Include="Tables\Armors.sql" />
-    <Build Include="Tables\Clothes.sql" />
-    <Build Include="Tables\Inventory.sql" />
-    <Build Include="Tables\ItemMaterials.sql" />
-    <Build Include="Tables\Items.sql" />
-    <Build Include="Tables\ItemSpells.sql" />
-    <Build Include="Tables\ItemTypes.sql" />
-    <Build Include="Tables\Players.sql" />
-    <Build Include="Tables\Weapons.sql" />
     <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\ChangingData.sql" />
+    <None Include="Scripts\CombiningData.sql" />
+    <None Include="Scripts\CreatingViews.sql" />
+    <None Include="Scripts\AgregationFunctions.sql" />
   </ItemGroup>
 </Project>

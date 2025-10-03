@@ -1,6 +1,0 @@
-﻿CREATE TABLE [dbo].[Players]
-(
-	[PlayerId] NVARCHAR(6) NOT NULL PRIMARY KEY,
-	[Name] NVARCHAR(60) NOT NULL,
-	
-)

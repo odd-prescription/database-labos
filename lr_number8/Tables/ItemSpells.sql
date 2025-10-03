@@ -1,5 +1,0 @@
-﻿CREATE TABLE [dbo].[ItemSpells]
-(
-	[SpellId] INT NOT NULL PRIMARY KEY,
-	[Spell] NVARCHAR(50) NOT NULL UNIQUE,
-)
