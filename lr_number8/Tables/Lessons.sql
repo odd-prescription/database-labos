@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Lessons] (
+	[Id] INT IDENTITY PRIMARY KEY,
+	[Course] INT NOT NULL,
+	[Content] NVARCHAR(1000),
+	[VideoURL] NVARCHAR(255),
+	FOREIGN KEY (Course) REFERENCES Courses(Id),
+);

@@ -57,14 +57,23 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="Scripts\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
+    <Folder Include="Tables" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\ChangingData.sql" />
     <None Include="Scripts\CombiningData.sql" />
     <None Include="Scripts\CreatingViews.sql" />
     <None Include="Scripts\AgregationFunctions.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\Certificates.sql" />
+    <Build Include="Tables\Courses.sql" />
+    <Build Include="Tables\Homeworks.sql" />
+    <Build Include="Tables\Lessons.sql" />
+    <Build Include="Tables\Materials.sql" />
+    <Build Include="Tables\Reviews.sql" />
+    <Build Include="Tables\Students.sql" />
+    <Build Include="Tables\Teachers.sql" />
+    <None Include="Tables\IgnoredTables.sql" />
   </ItemGroup>
 </Project>

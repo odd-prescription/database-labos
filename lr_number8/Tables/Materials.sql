@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Materials] (
+	[Id] INT IDENTITY PRIMARY KEY,
+	[Lesson] INT NOT NULL,
+	[Description] NVARCHAR(255),
+	[URL] NVARCHAR(255) NOT NULL,
+	FOREIGN KEY (Lesson) REFERENCES Lessons(Id)
+);
