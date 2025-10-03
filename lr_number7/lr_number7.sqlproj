@@ -56,20 +56,27 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Scripts" />
+    <Folder Include="TableScripts" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Items.sql" />
-    <Build Include="Weapons.sql" />
-    <Build Include="Armors.sql" />
-    <Build Include="Inventory.sql" />
-    <Build Include="Clothes.sql" />
-    <Build Include="Accessories.sql" />
-    <Build Include="Players.sql" />
-    <Build Include="ItemMaterials.sql" />
-    <Build Include="ItemSpells.sql" />
-    <Build Include="ItemTypes.sql" />
+    <None Include="Scripts\FiltrationScript.sql" />
+    <None Include="Scripts\InsertingScript1.sql" />
+    <Build Include="TableScripts\Accessories.sql" />
+    <Build Include="TableScripts\Armors.sql" />
+    <Build Include="TableScripts\Clothes.sql" />
+    <Build Include="TableScripts\Inventory.sql" />
+    <Build Include="TableScripts\ItemMaterials.sql" />
+    <Build Include="TableScripts\Items.sql" />
+    <None Include="Scripts\FiltrationCombination.sql" />
+    <None Include="Scripts\Order.sql" />
+    <None Include="Scripts\Group.sql" />
+    <None Include="Scripts\TemplatesRanges.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="InsertingScript1.sql" />
+    <Build Include="TableScripts\ItemSpells.sql" />
+    <Build Include="TableScripts\ItemTypes.sql" />
+    <Build Include="TableScripts\Players.sql" />
+    <Build Include="TableScripts\Weapons.sql" />
   </ItemGroup>
 </Project>
