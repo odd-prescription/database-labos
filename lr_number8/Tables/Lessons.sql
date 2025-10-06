@@ -3,5 +3,5 @@
 	[Course] INT NOT NULL,
 	[Content] NVARCHAR(1000),
 	[VideoURL] NVARCHAR(255),
-	FOREIGN KEY (Course) REFERENCES Courses(Id),
+	FOREIGN KEY (Course) REFERENCES Courses(Id)
 );

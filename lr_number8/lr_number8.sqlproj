@@ -74,6 +74,7 @@
     <Build Include="Tables\Reviews.sql" />
     <Build Include="Tables\Students.sql" />
     <Build Include="Tables\Teachers.sql" />
-    <None Include="Tables\IgnoredTables.sql" />
+    <None Include="IgnoredTables.sql" />
+    <Build Include="Tables\CoursesRegistrations.sql" />
   </ItemGroup>
 </Project>

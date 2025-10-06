@@ -366,3 +366,4 @@ MigrationBackup/
 FodyWeavers.xsd
 
 /lr_number8/Tables/IgnoredTables.sql
+/lr_number8/IgnoredTables.sql
