@@ -6,7 +6,7 @@ SELECT [Course], AVG([Stars]) AS [AverageRating] FROM [Reviews]
 SELECT SUM([DurationInHours]) AS [TotalCoursesHours] FROM [Courses]
 	WHERE [Price] >= 16000;
 
-SELECT COUNT(*) AS [TotalHomeworks] FROM [Homeworks];
+SELECT TOP 4 COUNT(*) AS [TotalHomeworks] FROM [Homeworks];
 
 SELECT [LastName], [FirstName], MAX([Experience]) AS [MaxExperienceInYears] FROM [Teachers]
 	GROUP BY [LastName], [FirstName]

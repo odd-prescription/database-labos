@@ -62,7 +62,6 @@
   <ItemGroup>
     <None Include="Scripts\ChangingData.sql" />
     <None Include="Scripts\CombiningData.sql" />
-    <None Include="Scripts\CreatingViews.sql" />
     <None Include="Scripts\AgregationFunctions.sql" />
     <None Include="Scripts\InsertingData.sql" />
   </ItemGroup>
@@ -77,5 +76,6 @@
     <Build Include="Tables\Teachers.sql" />
     <None Include="IgnoredTables.sql" />
     <Build Include="Tables\CoursesRegistrations.sql" />
+    <Build Include="Scripts\View1.sql" />
   </ItemGroup>
 </Project>
