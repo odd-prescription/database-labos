@@ -64,6 +64,8 @@
     <None Include="Scripts\CombiningData.sql" />
     <None Include="Scripts\AgregationFunctions.sql" />
     <None Include="Scripts\InsertingData.sql" />
+    <None Include="Scripts\Subqueries.sql" />
+    <None Include="Scripts\SpecialFunctions.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Certificates.sql" />
