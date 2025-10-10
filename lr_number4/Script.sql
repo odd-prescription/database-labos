@@ -9,7 +9,35 @@
 			Отзывы, 
 			Материалы
 */
-CREATE DATABASE [db_lr_4];
+--CREATE DATABASE [db_lr_4];
+USE db_lr_4;
+GO
+
+/*DELETE FROM [Certificates];
+DELETE FROM Homeworks;
+DELETE FROM Lessons;
+DELETE FROM Materials;
+DELETE FROM Reviews;
+DELETE FROM Courses;
+DELETE FROM Students;
+DELETE FROM Teachers;
+DROP TABLE [Certificates];
+DROP TABLE Homeworks;
+DROP TABLE Lessons;
+DROP TABLE Materials;
+DROP TABLE Reviews;
+DROP TABLE Courses;
+DROP TABLE Students;
+DROP TABLE Teachers;
+
+DBCC CHECKIDENT('Certificates', RESEED, 0);
+DBCC CHECKIDENT('Homeworks', RESEED, 0);
+DBCC CHECKIDENT('Lessons', RESEED, 0);
+DBCC CHECKIDENT('Materials', RESEED, 0);
+DBCC CHECKIDENT('Reviews', RESEED, 0);
+DBCC CHECKIDENT('Courses', RESEED, 0);
+DBCC CHECKIDENT('Students', RESEED, 0);
+DBCC CHECKIDENT('Teachers', RESEED, 0);*/
 
 CREATE TABLE [dbo].[Students] (
 	[Id] INT IDENTITY PRIMARY KEY,
@@ -17,11 +45,12 @@ CREATE TABLE [dbo].[Students] (
 	[FirstName] VARCHAR(30) NOT NULL,
 	[Patronymic] VARCHAR(30),
 	[Biography] NVARCHAR(200),
-	[Email] VARCHAR(30) NOT NULL UNIQUE,
-	[Password] VARCHAR(16) NOT NULL CHECK(LEN(Password) >= 8),
-	[Birthday] DATETIME CHECK(DATEDIFF(YEAR, Birthday, GETDATE()) - YEAR(Birthday) >= 14), 
+	[Email] VARCHAR(50) NOT NULL UNIQUE,
+	[Password] VARCHAR(256) NOT NULL CHECK(LEN(Password) >= 256),
+	[Birthday] DATETIME CHECK(DATEDIFF(YEAR, Birthday, GETDATE()) >= 14), 
 								-- типо студенту д.б больше 14 лет
 );
+GO
 
 CREATE TABLE [dbo].[Teachers] (
 	[Id] INT IDENTITY PRIMARY KEY,
@@ -30,10 +59,11 @@ CREATE TABLE [dbo].[Teachers] (
 	[Patronymic] VARCHAR(30),
 	[Biography] NVARCHAR(200),
 	[Experience] INT CHECK(Experience > 0),
-	[Email] VARCHAR(30) NOT NULL UNIQUE,
-	[Password] VARCHAR(16) NOT NULL CHECK(LEN(Password) >= 8),
-	[Birthday] DATETIME CHECK(DATEDIFF(YEAR, Birthday, GETDATE()) - YEAR(Birthday) >= 18),
+	[Email] VARCHAR(50) NOT NULL UNIQUE,
+	[Password] VARCHAR(256) NOT NULL CHECK(LEN(Password) >= 256),
+	[Birthday] DATETIME CHECK(DATEDIFF(YEAR, Birthday, GETDATE()) >= 18),
 );
+GO
 
 CREATE TABLE [dbo].[Courses] (
 	[Id] INT IDENTITY PRIMARY KEY,
@@ -44,6 +74,7 @@ CREATE TABLE [dbo].[Courses] (
 	[Teacher] INT NOT NULL, 
 	FOREIGN KEY (Teacher) REFERENCES Teachers(Id)
 );
+GO
 
 CREATE TABLE [dbo].[Lessons] (
 	[Id] INT IDENTITY PRIMARY KEY,
@@ -52,6 +83,7 @@ CREATE TABLE [dbo].[Lessons] (
 	[VideoURL] NVARCHAR(255),
 	FOREIGN KEY (Course) REFERENCES Courses(Id),
 );
+GO
 
 CREATE TABLE [dbo].[Homeworks] (
 	[Id] INT IDENTITY PRIMARY KEY,
@@ -61,6 +93,7 @@ CREATE TABLE [dbo].[Homeworks] (
 	[MaxScore] INT CHECK (MaxScore >= 0),
 	FOREIGN KEY (Lesson) REFERENCES Lessons(Id)
 );
+GO
 
 CREATE TABLE [dbo].[Certificates] (
 	[Id] INT IDENTITY PRIMARY KEY,
@@ -72,6 +105,7 @@ CREATE TABLE [dbo].[Certificates] (
 	FOREIGN KEY (Course) REFERENCES Courses(Id),
 	FOREIGN KEY (Student) REFERENCES Students(Id)
 );
+GO
 
 CREATE TABLE [dbo].[Reviews] (
 	[Id] INT IDENTITY  PRIMARY KEY,
@@ -83,6 +117,7 @@ CREATE TABLE [dbo].[Reviews] (
 	FOREIGN KEY (Student) REFERENCES Students(Id),
 	FOREIGN KEY (Course) REFERENCES Courses(Id)
 );
+GO
 
 CREATE TABLE [dbo].[Materials] (
 	[Id] INT IDENTITY PRIMARY KEY,
@@ -91,6 +126,7 @@ CREATE TABLE [dbo].[Materials] (
 	[URL] NVARCHAR(255) NOT NULL,
 	FOREIGN KEY (Lesson) REFERENCES Lessons(Id)
 );
+GO
 
 INSERT INTO [dbo].[Students] (
 	[LastName],
@@ -106,7 +142,7 @@ INSERT INTO [dbo].[Students] (
 	'Патронович',
 	'Родился в городе Донецк',
 	'goyda2014@yandex.ru',
-	'1234567810',
+	'SHA-256-hash-code-1',
 	'01/01/2006'),
 	(
 	'Дмитриев',
@@ -114,9 +150,10 @@ INSERT INTO [dbo].[Students] (
 	'Добросалович',
 	'',
 	'genshinismylive@mail.ru',
-	'gs^3habd3h',
+	'SHA-256-hash-code-2',
 	'24/03/2001'
 	)
+GO
 
 INSERT INTO [dbo].[Teachers] (
 	[LastName],
@@ -134,9 +171,10 @@ INSERT INTO [dbo].[Teachers] (
 	'Профессианальный повар с 13-летним стажем',
 	'12',
 	'asamgartjy@gmail.com',
-	'12345678910',
+	'SHA-256-hash-code-3',
 	'19/04/1994'
 )
+GO
 
 INSERT INTO [dbo].[Courses] (
 	[Title],
@@ -151,6 +189,7 @@ INSERT INTO [dbo].[Courses] (
 	'12',
 	'1'
 )
+GO
 
 INSERT INTO [dbo].[Lessons] (
 	[Course],
@@ -161,6 +200,7 @@ INSERT INTO [dbo].[Lessons] (
 	'содержание',
 	'https://www.youtube.com/watch?v=WePNs-G7puA'
 )
+GO
 
 INSERT INTO [dbo].[Homeworks] (
 	[Lesson],
@@ -173,6 +213,7 @@ INSERT INTO [dbo].[Homeworks] (
 	'09/09/2025',
 	'2'
 )
+GO
 
 INSERT INTO [dbo].[Certificates] (
 	[UniqueCode],
@@ -187,6 +228,7 @@ INSERT INTO [dbo].[Certificates] (
 	'Хорошо поработал',
 	'20/10/2099'
 )
+GO
 
 INSERT INTO [dbo].[Reviews] (
 	[Stars],
@@ -201,6 +243,7 @@ INSERT INTO [dbo].[Reviews] (
 	'1',
 	'21/10/2025'
 )
+GO
 
 INSERT INTO [dbo].[Materials] (
 	[Lesson],
@@ -211,3 +254,5 @@ INSERT INTO [dbo].[Materials] (
 	'',
 	'https://www.youtube.com/watch?v=jVFvXKDKCZg&pp=0gcJCfYJAYcqIYzv'
 )
+GO
+*/
