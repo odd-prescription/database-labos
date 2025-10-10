@@ -60,13 +60,6 @@
     <Folder Include="Tables" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Scripts\AgregationFunctions.sql" />
-    <Build Include="Scripts\ChangingData.sql" />
-    <Build Include="Scripts\CombiningData.sql" />
-    <Build Include="Scripts\InsertingData.sql" />
-    <Build Include="Scripts\SpecialFunctions.sql" />
-    <Build Include="Scripts\Subqueries.sql" />
-    <Build Include="Scripts\View1.sql" />
     <Build Include="Tables\Certificates.sql" />
     <Build Include="Tables\Courses.sql" />
     <Build Include="Tables\CoursesRegistrations.sql" />

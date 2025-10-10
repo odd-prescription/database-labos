@@ -1,5 +1,5 @@
 ﻿-- Подзапросы
-USE db_lr_8;
+USE db_lr_9;
 GO
 SELECT [LastName], [FirstName] FROM [Teachers]
 WHERE [Id] = (

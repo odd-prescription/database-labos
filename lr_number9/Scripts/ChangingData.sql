@@ -1,6 +1,6 @@
 ﻿-- UPDATE и DELETE
-USE db_lr_8;
-
+USE db_lr_9;
+GO
 UPDATE [Materials] SET 
 	[Materials].[URL] = 'https://youtu.be/jVFvXKDKCZg?si=2k3F7X09PblzmoUS'
 	WHERE [Materials].[Id] = 1;
@@ -25,3 +25,4 @@ INSERT INTO [Materials] ([Lesson], [Description], [URL]) VALUES
 (12, 'Психология общения', 'https://example.com/communication_guide.pdf'),
 (13, 'Гайд по композиции', 'https://example.com/photo_composition.pdf');
 */
+GO

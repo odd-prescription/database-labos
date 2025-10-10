@@ -1,7 +1,7 @@
 ﻿/*  Преобразования CAST CONVERT
 	Математические функции
 	Строковые функции  */
-USE db_lr_8;
+USE db_lr_9;
 GO
 
 SELECT CAST([Id] AS DECIMAL(2)) AS [CastedId],

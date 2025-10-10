@@ -1,5 +1,6 @@
-﻿USE db_lr_8;
--- INNER JOIN, LEFT JOIN, RIGHT JOIN
+﻿USE db_lr_9;
+GO
+-- INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN
 
 SELECT [Stud].[LastName], [Stud].[FirstName], [Hmwk].[Lesson], [Hmwk].[Description], [Hmwk].[DueDate], [Hmwk].[MaxScore] 
 	FROM [Homeworks] AS [Hmwk]
@@ -15,3 +16,10 @@ RIGHT JOIN [Lessons] AS [Lssn]
 	ON [Matrl].[Lesson] = [Lssn].[Id]
 RIGHT JOIN [Courses] AS [Cour] 
 	ON [Lssn].[Course] = [Cour].[Id];
+
+SELECT [Cour].[Title], [Cour].[Description], CONCAT([Teach].[LastName], ' ', [Teach].[FirstName]) AS [Teacher], [Cour].[DurationInHours], [Cour].[Price] 
+	FROM [Teachers] AS [Teach]
+FULL JOIN [Courses] AS [Cour]
+	ON [Cour].[Teacher] = [Teach].[Id]
+
+GO
