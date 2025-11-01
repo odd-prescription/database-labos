@@ -5,21 +5,17 @@ SELECT [Student],
 	[Course],
 	ROW_NUMBER() OVER (PARTITION BY [Student] ORDER BY [UniqueCode] DESC) AS [RowNumb]
 	FROM [Certificates] AS [Cert];
-
 SELECT 
-	LAG() OVER () AS []
-	FROM [] AS [];
-
+	LAG([IssueDate]) OVER (PARTITION BY [Student] ORDER BY [IssueDate]) AS [PrevIssue]
+	FROM [Certificates] AS [Cert];
 SELECT 
-	LEAD() OVER () AS []
-	FROM [] AS [];
-
+	LEAD([IssueDate]) OVER (PARTITION BY [Student] ORDER BY [IssueDate]) AS [NextIssue]
+	FROM [Certificates] AS [Cert];
 SELECT 
-	RANK() OVER () AS []
-	FROM [] AS [];
-
+	RANK() OVER (PARTITION BY [Course] ORDER BY [Stars] DESC) AS [Rank]
+	FROM [Reviews] AS [Rev];
 SELECT 
-	DENSE_RANK() OVER () AS []
-	FROM [] AS [];
+	DENSE_RANK() OVER (PARTITION BY [Course] ORDER BY [Stars] DESC) AS [DenseRank]
+	FROM [Reviews] AS [Rev];
 
 GO
