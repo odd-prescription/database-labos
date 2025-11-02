@@ -1,10 +1,6 @@
 USE [db_lr_10];
 GO
 
-/*
-•	
-•	Создать представление (VIEW) со списком наиболее продаваемых блюд.
-*/
 --  Вывести список заказов с именами клиентов и названиями блюд с использованием INNER JOIN.
 SELECT [M].[DishTitle], 
 	CONCAT([C].[LastName], ' ', [C].[FirstName]) AS [ClientName], 
@@ -20,13 +16,13 @@ ORDER BY [OrderDay];
 
 --  Выполнить выборку по самым популярным блюдам с использованием GROUP BY и COUNT.
 SELECT TOP 5 [M].[DishTitle], COUNT([O].[ClientId]) AS [PopularDishes] FROM [Orders] AS [O]
-INNER JOIN [Menu] AS [M] ON [O].[DishId] = [M].[Id]
+RIGHT JOIN [Menu] AS [M] ON [O].[DishId] = [M].[Id]
 GROUP BY [M].[DishTitle]
 ORDER BY [PopularDishes] DESC;
 
 --  Получить список блюд, которые были заказаны менее 3 раз (HAVING).
 SELECT [M].[DishTitle] FROM [Orders] AS [O]
-INNER JOIN [Menu] AS [M] ON [O].[DishId] = [M].[Id]
+LEFT JOIN [Menu] AS [M] ON [O].[DishId] = [M].[Id]
 GROUP BY [M].[DishTitle]
 HAVING COUNT([O].[ClientId]) < 3;
 
@@ -44,8 +40,5 @@ HAVING SUM([P].[Amount]) > (SELECT(AVG([Amount])) FROM [Payments]);
 
 --  Выполнить сортировку по общей сумме заказа в порядке убывания (ORDER BY).
 SELECT * FROM [Orders]
-INNER JOIN [Payments] ON [Payments].[OrderId] = [Orders].[Id]
+FULL JOIN [Payments] ON [Payments].[OrderId] = [Orders].[Id]
 ORDER BY [Payments].[Amount] DESC;
-
-CREATE VIEW 
-
